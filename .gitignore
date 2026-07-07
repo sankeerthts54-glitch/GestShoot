@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# MediaPipe model (large binary, auto-downloaded at runtime)
+hand_landmarker.task
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log
