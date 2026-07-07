@@ -1,4 +1,4 @@
-# Hand Gesture Space Shooter 🚀
+# Hand Gesture Space Shooter 🚀 - Neon Horizon v3.1
 
 Real-time space shooter controlled entirely by hand gestures using MediaPipe and OpenCV.
 No game engine — just pure webcam + computer vision magic.
@@ -14,7 +14,8 @@ No game engine — just pure webcam + computer vision magic.
 
 ## Rules
 - Destroy enemies before they reach the bottom of the screen
-- You start with **3 lives** — each enemy that gets past costs 1 life
+- You start with **5 lives** — each enemy that gets past costs 1 life
+- Build **combos** by chaining rapid kills for bonus points
 - Game over when all lives are lost
 - Beat your high score!
 
@@ -22,7 +23,7 @@ No game engine — just pure webcam + computer vision magic.
 
 ```bash
 # Install dependencies
-pip install mediapipe opencv-python numpy
+pip install mediapipe opencv-python numpy sounddevice
 
 # Run the game
 python game.py
@@ -33,22 +34,22 @@ python game.py
 - Webcam (built-in or USB)
 - Good lighting for best hand tracking
 
+## What's New in v3.1
+- **Centre-Zone Gameplay**: Action is restricted to the middle 64% of the screen for reliable hand recognition. Hand movements are remapped seamlessly so you don't need to reach the physical edges of your webcam.
+- **Kalman Filter Tracking**: Snappier, smooth, predictive hand tracking that removes jitter.
+- **Dynamic Graphics**: Neon glow rendering system (single-pass Gaussian bloom), 3-layer parallax star field, frosted-glass HUD, and animated multi-polygon ships.
+- **Sound Engine**: Synthesized retro sound effects using `sounddevice` and `numpy`.
+- **Advanced Combat**: Pinch detection normalized to hand distance, combo multiplier system, and Elite enemy types.
+- **Game Feel Enhancements**: Screen shake, level up banners, and dynamic background tinting.
+
 ## Tech Stack
 
 | Library | Purpose |
 |---|---|
 | **MediaPipe** | Real-time hand landmark detection (21 points) |
 | **OpenCV** | Webcam capture, rendering, drawing |
-| **NumPy** | Coordinate math |
-
-## Features
-- 🎯 Real-time hand tracking via MediaPipe (21-point landmark model)
-- 🌟 Space atmosphere: darkened webcam feed + randomised star field
-- 💥 Particle explosion effects on enemy destruction
-- 🛸 Smooth spaceship movement with position interpolation
-- ⏱ 20-frame shot cooldown (no spam)
-- 📊 Live score & lives HUD
-- 🔄 Instant restart with R key
+| **NumPy** | Coordinate math, Kalman filtering, Audio synthesis |
+| **SoundDevice** | Audio playback |
 
 ## Controls At a Glance
 
